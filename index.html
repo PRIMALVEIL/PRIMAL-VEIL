@@ -11,28 +11,48 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0d0d0d, #0f0f0f, #2a0000);
+      background: linear-gradient(115deg, #0d0d0d, #0f0f0f, #2a0000);
       color: #f5f5f5;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
     }
+
+    h1, p, a {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease-out forwards;
+    }
+
     h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
+      animation-delay: 0.2s;
     }
+
     p {
       font-size: 1.2em;
       max-width: 600px;
+      animation-delay: 0.6s;
     }
+
     a {
       color: #66ccff;
       text-decoration: none;
       font-weight: bold;
       margin-top: 1em;
       display: inline-block;
+      animation-delay: 1s;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
