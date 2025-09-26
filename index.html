@@ -6,23 +6,24 @@
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       background: linear-gradient(115deg, #0d0d0d, #0f0f0f, #2a0000);
       color: #f5f5f5;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      overflow: hidden;
+      overflow-y: auto;
       position: relative;
+      padding: 2em;
     }
 
     /* STATIC BACKGROUND */
     body::before {
       content: "";
-      position: absolute;
+      position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
       opacity: 0.08;
@@ -40,12 +41,12 @@
     }
 
     /* TEXT ANIMATION */
-    h1, p, a {
+    h1, h2, p, a, li {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeUp 1s ease-out forwards;
-      z-index: 2;
       position: relative;
+      z-index: 2;
     }
 
     h1 {
@@ -56,10 +57,31 @@
       animation-delay: 0.2s;
     }
 
+    h2 {
+      font-size: 1.8em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: #ff6666;
+      animation-delay: 0.4s;
+    }
+
     p {
       font-size: 1.2em;
-      max-width: 600px;
+      max-width: 700px;
+      line-height: 1.5em;
       animation-delay: 0.6s;
+    }
+
+    ul {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+      animation-delay: 0.8s;
     }
 
     a {
@@ -69,10 +91,26 @@
       margin-top: 1em;
       display: inline-block;
       animation-delay: 1s;
+      cursor: pointer;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    #privacyDiv {
+      display: none;
+      margin-top: 2em;
+      text-align: left;
+    }
+
+    #backBtn {
+      margin-top: 2em;
+      color: #ff4444;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
     }
 
     @keyframes fadeUp {
@@ -84,8 +122,63 @@
   </style>
 </head>
 <body>
+  <!-- Main Page Content -->
   <h1>PRIMAL VEIL</h1>
   <p>A monke horror VR experience where every step could mean survival.. or death.</p>
-  <a href="PrivacyPolicy.html">Privacy Policy</a>
+  <a id="showPrivacy">Privacy Policy</a>
+
+  <!-- Embedded Privacy Policy -->
+  <div id="privacyDiv">
+    <h1>Privacy Policy for PRIMAL VEIL</h1>
+    <p>Last updated: 27/09/2025</p>
+
+    <h2>The information we collect</h2>
+    <p>PRIMAL VEIL may temporarily process <strong>voice data</strong> during gameplay for features such as
+    multiplayer communication. We do <strong>not</strong> automatically record or download any audio from the players.
+    Recordings may only be created by players themselves if they choose to report inappropriate behavior
+    (e.g., harassment or offensive language) through our community Discord server.</p>
+
+    <h2>How we use the information</h2>
+    <ul>
+      <li>To enable in-game voice chat between players to allow communication.</li>
+      <li>To allow players to record and submit reports of misconduct at their own discretion.</li>
+      <li>To review reports for community safety and enforcement. Misconduct is not tolerated.</li>
+    </ul>
+
+    <h2>Data storage</h2>
+    <p>Audio recordings are <strong>not</strong> collected or stored by PRIMAL VEIL directly. If a player 
+    submits a report, the recording is shared through our Discord community server. In that case, the 
+    storage and processing of the recording is handled according to <a href="https://discord.com/privacy" target="_blank">Discord’s Privacy Policy</a>. 
+    We do not share recordings with third parties outside of moderation needs.</p>
+
+    <h2>Children’s Privacy</h2>
+    <p>PRIMAL VEIL is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, please contact us at: 
+    <a href="mailto:nbayambay@gmail.com">nbayambay@gmail.com</a></p>
+
+    <a id="backBtn">Back to Main Page</a>
+  </div>
+
+  <script>
+    const showPrivacy = document.getElementById('showPrivacy');
+    const privacyDiv = document.getElementById('privacyDiv');
+    const backBtn = document.getElementById('backBtn');
+
+    showPrivacy.onclick = () => {
+      privacyDiv.style.display = 'block';
+      showPrivacy.style.display = 'none';
+      document.querySelector('h1').style.display = 'none';
+      document.querySelector('p').style.display = 'none';
+    };
+
+    backBtn.onclick = () => {
+      privacyDiv.style.display = 'none';
+      showPrivacy.style.display = 'inline-block';
+      document.querySelector('h1').style.display = 'block';
+      document.querySelector('p').style.display = 'block';
+    };
+  </script>
 </body>
 </html>
