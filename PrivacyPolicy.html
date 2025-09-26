@@ -3,6 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <title>PRIMAL VEIL - Privacy Policy</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: linear-gradient(115deg, #0d0d0d, #0f0f0f, #2a0000);
+      color: #f5f5f5;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      overflow-y: auto;
+      position: relative;
+      padding: 2em;
+    }
+
+    /* STATIC BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
+      opacity: 0.08;
+      animation: staticMove 0.2s steps(2) infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes staticMove {
+      0% { transform: translate(0,0); }
+      25% { transform: translate(-5%,5%); }
+      50% { transform: translate(5%,-5%); }
+      75% { transform: translate(-5%,-5%); }
+      100% { transform: translate(0,0); }
+    }
+
+    /* TEXT ANIMATION */
+    h1, h2, p, a, li {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease-out forwards;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      color: #ff4444;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #990000;
+      animation-delay: 0.2s;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: #ff6666;
+      animation-delay: 0.4s;
+    }
+
+    p {
+      font-size: 1.1em;
+      max-width: 700px;
+      line-height: 1.5em;
+      animation-delay: 0.6s;
+    }
+
+    ul {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+      animation-delay: 0.8s;
+    }
+
+    a {
+      color: #ff4444;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1em;
+      display: inline-block;
+      animation-delay: 1s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Privacy Policy for PRIMAL VEIL</h1>
