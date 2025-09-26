@@ -9,8 +9,8 @@
 
   <h2>The information we collect</h2>
   <p>PRIMAL VEIL may temporarily process <strong>voice data</strong> during gameplay for features such as
-  multiplayer communication. We do <strong>not</strong> automatically record or download your audio. 
-  Recordings may only be created by players themselves if they choose to report inappropriate behavior 
+  multiplayer communication. We do <strong>not</strong> automatically record or download any audio from the players.
+  Recordings may only be created by players themselves if they choose to report inappropriate behavior
   (e.g., harassment or offensive language) through our community Discord server.</p>
 
   <h2>How we use the information</h2>
