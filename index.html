@@ -15,63 +15,47 @@
       color: #f5f5f5;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
-      overflow: hidden; /* prevents static overflow incase it happens */
-      position: relative;
+      overflow: hidden;
     }
-
-    /* STATIC OVERLAY */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url("https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"); /* fallback if noise not supported (could happen, incase) */
-      background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
-      opacity: 0.08; /* faint */
-      animation: staticMove 0.2s steps(2) infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @keyframes staticMove {
-      0% { transform: translate(0,0); }
-      25% { transform: translate(-5%,5%); }
-      50% { transform: translate(5%,-5%); }
-      75% { transform: translate(-5%,-5%); }
-      100% { transform: translate(0,0); }
-    }
-
-    /* CONTENT */
-    h1, p, a {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s ease-out forwards;
-      z-index: 2; /* keeps text above static so you can see it */
-      position: relative;
-    }
-
     h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
-      color: #ff4444;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #990000;
-      animation-delay: 0.2s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
     }
-
     p {
       font-size: 1.2em;
       max-width: 600px;
-      animation-delay: 0.6s;
+      margin-bottom: 1em;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
     }
-
+    img {
+      width: 1000px;
+      height: 520px;
+      margin-bottom: 1em;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.6s;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #222;
+    }
     a {
-      color: #ff4444;
+      color: #66ccff;
       text-decoration: none;
       font-weight: bold;
       margin-top: 1em;
       display: inline-block;
-      animation-delay: 1s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.9s;
     }
-
     a:hover {
       text-decoration: underline;
     }
@@ -87,6 +71,7 @@
 <body>
   <h1>PRIMAL VEIL</h1>
   <p>A monke horror VR experience where every step could mean survival.. or death.</p>
+  <img src="https://via.placeholder.com/1000x520.png?text=PRIMAL+VEIL+ART+COMING+SOON" alt="PRIMAL VEIL placeholder">
   <a href="PrivacyPolicy.html">Privacy Policy</a>
 </body>
 </html>
