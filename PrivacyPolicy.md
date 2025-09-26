@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Privacy Policy - PRIMAL VEIL</title>
 </head>
 <body>
   <h1>Privacy Policy for PRIMAL VEIL</h1>
-  <p>Last updated: [Month Day, Year]</p>
+  <p>Last updated: 27/09/2025</p>
 
   <h2>Information We Collect</h2>
   <p>PRIMAL VEIL may temporarily process <strong>voice data</strong> during gameplay for features such as 
@@ -30,6 +29,6 @@
 
   <h2>Contact Us</h2>
   <p>If you have questions about this Privacy Policy, please contact us at: 
-  <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  <a href="mailto:nbayambay@gmail.com">nbayambay@gmail.com</a></p>
 </body>
 </html>
